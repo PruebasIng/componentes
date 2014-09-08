@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ComboBox xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			xmlns:s="library://ns.adobe.com/flex/spark" 
+			xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" prompt="Forma de Pago">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:dataProvider>
+		<mx:ArrayList>
+			<fx:String>Cheque</fx:String>
+			<fx:String>Efectivo</fx:String>
+			<fx:String>Tarjeta Debito</fx:String>
+			<fx:String>Tarjeta Credito</fx:String>
+			<fx:String>Consignacion Bancaria</fx:String>
+			<fx:String>Transferencia Electronica</fx:String>
+		</mx:ArrayList>
+	</s:dataProvider>
+</s:ComboBox>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ComboBox xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="100%" prompt="Parentezco">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+
+		<s:dataProvider>
+			<mx:ArrayList>
+				<fx:String>Abuelo</fx:String>
+				<fx:String>Amigo</fx:String>
+				<fx:String>Conyugue</fx:String>
+				<fx:String>Hijo</fx:String>
+				<fx:String>Madre</fx:String>
+				<fx:String>Nieto</fx:String>
+				<fx:String>Padre</fx:String>
+				<fx:String>Primo</fx:String>
+				<fx:String>Sobrino</fx:String>
+				<fx:String>Tio</fx:String>
+			</mx:ArrayList>
+		</s:dataProvider>
+	
+</s:ComboBox>

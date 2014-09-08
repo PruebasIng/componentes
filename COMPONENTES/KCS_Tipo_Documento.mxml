@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ComboBox xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="100%" labelField="Tipo_Documento" prompt="Tipo Documento">
+		
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:dataProvider>
+		<s:ArrayList>
+			<fx:Object Codigo_Tipo = "13" Tipo_Documento = "Cedula de Ciudadania"/>
+			<fx:Object Codigo_Tipo = "22" Tipo_Documento = "Cedula de Extranjeria"/>
+			<fx:Object Codigo_Tipo = "42" Tipo_Documento = "Documento Extranjero"/>
+			<fx:Object Codigo_Tipo = "31" Tipo_Documento = "Nit"/>
+			<fx:Object Codigo_Tipo = "41" Tipo_Documento = "Pasaporte"/>
+			<fx:Object Codigo_Tipo = "43" Tipo_Documento = "Para Informacion Exogena"/>
+			<fx:Object Codigo_Tipo = "11" Tipo_Documento = "Registro Civil"/>
+			<fx:Object Codigo_Tipo = "12" Tipo_Documento = "Tarjeta de Identidad"/>
+			<fx:Object Codigo_Tipo = "40" Tipo_Documento = "Tarjeta Extranjeria"/>
+		</s:ArrayList>
+	</s:dataProvider>
+	
+</s:ComboBox>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 xmlns:ns1="*"
+		 width="368" height="170">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Label x="10" y="-26" color="#000000" fontFamily="Georgia" fontSize="28" text="C" styleName="Lbl_Panel"/>
+	<s:Label x="28" y="-16.9" color="#000000" fontFamily="Georgia" fontSize="16" text="ONTACTO" styleName="Lbl_Panel"/>
+	
+	<s:FormItem x="-8" y="-1" width="208" required="true">
+		<ns1:KCS_Tipo_Documento id="Cbx_Tipo_Documento" width="172"/>
+	</s:FormItem>
+	<s:FormItem x="184" y="0" required="true">
+		<ns1:KCS_Documento id="Txt_Documento" width="110"/>
+	</s:FormItem>
+	<ns1:KCS_Digito_Verificacion id="Lbl_Digito" x="331" y="12" width="30" height="20"/>
+	<s:FormItem x="-8" y="31" required="true">
+		<ns1:KCS_Nombres id="Txt_Nombres" width="170">
+		</ns1:KCS_Nombres>
+	</s:FormItem>
+	<s:FormItem x="184" y="31" required="true">
+		<ns1:KCS_Apellidos id="Txt_Apellidos" width="140">
+		</ns1:KCS_Apellidos>
+	</s:FormItem>
+	<s:FormItem x="-8" y="62" required="true">
+		<ns1:KCS_Email id="Txt_Email" x="0" y="-1" width="331">
+		</ns1:KCS_Email>
+	</s:FormItem>
+	<s:FormItem x="184" y="94" width="190" required="true">
+		<ns1:KCS_Telefono id="Txt_Telefono" width="140"/>
+	</s:FormItem>
+	<s:FormItem x="-8" y="94" width="188" required="true">
+		<ns1:KCS_Celular id="Txt_Celular" width="155"/>
+	</s:FormItem>
+</s:Panel>

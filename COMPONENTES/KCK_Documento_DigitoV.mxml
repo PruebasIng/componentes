@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:HGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  xmlns:COMPONENTES="PKG_CLOUD.COMPONENTES.*"
+		  xmlns:ns1="*"
+		  width="100%">
+	
+	<fx:Script>
+		<![CDATA[
+
+			protected function calcularDV(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				var factor:Array = [3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71];
+				var cant:int = Txt_Documento.text.length;
+				var sum:int = 0;
+				
+				if (cant != 0){
+					for (var i:int = 0; i < cant; i++){
+						var str:String = Txt_Documento.text.substr(i,1);
+						sum += (int(str) * factor[(cant - i)-1])
+					}
+					
+					var mod:int = sum % 11;
+					if (mod > 1){
+						Lbl_DigitoV.text = String(11 - mod);
+					}else{
+						Lbl_DigitoV.text = String(mod);
+					}
+				}else{
+					Lbl_DigitoV.text = "";
+				}
+			}
+		
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+
+	<COMPONENTES:KCS_Documento id="Txt_Documento" width="80%"/>
+	<COMPONENTES:KCS_Digito_Verificacion id="Lbl_DigitoV" x="155" click="calcularDV(event)" width="20%" visible="false"/>
+	
+	
+</s:HGroup>

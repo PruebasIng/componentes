@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  xmlns:mcpaisservice="services.mcpaisservice.*"
+		  xmlns:mcdepartamentoservice="services.mcdepartamentoservice.*"
+		  xmlns:mcmunicipioservice="services.mcmunicipioservice.*"
+		  color="#FFFFFF">
+	<fx:Script>
+		<![CDATA[
+			import com.adobe.serializers.utility.TypeUtility;
+			
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			import spark.events.IndexChangeEvent;
+			
+			protected function Cbx_Pais_creationCompleteHandler(event:FlexEvent):void
+			{
+				getAllMc_paisResult.token = mcpaisService.getAllMc_pais();
+				
+			}
+			
+			protected function Cbx_Pais_changeHandler(event:IndexChangeEvent):void
+			{
+				// TODO Auto-generated method stub
+				if (Cbx_Pais.selectedIndex == -1 || Cbx_Pais.selectedItem.Codigo_Pais != 169) {
+					
+					Cbx_Departamento.selectedIndex = -1;
+					Cbx_Departamento.enabled = false;
+					Cbx_Municipio.selectedIndex = -1;
+					Cbx_Municipio.enabled = false;
+					
+				}else{
+					Cbx_Departamento.enabled = true;
+					getMc_departamentoByPaisResult.token = mcdepartamentoService.getMc_departamentoByPais(Cbx_Pais.selectedItem.Codigo_Pais);
+				}
+			}
+			
+			protected function Cbx_Departamento_changeHandler(event:IndexChangeEvent):void
+			{
+				// TODO Auto-generated method stub
+				if (Cbx_Departamento.selectedIndex == -1) {
+					
+					Cbx_Municipio.selectedIndex = -1;
+					Cbx_Municipio.enabled = false;
+					
+				}else{
+					Cbx_Municipio.enabled = true;
+					Cbx_Municipio.selectedIndex = -1;
+					getMc_municipioByDptoResult.token = mcmunicipioService.getMc_municipioByDpto(Cbx_Departamento.selectedItem.Codigo_Departamento);
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<s:CallResponder id="getAllMc_paisResult"/>
+		<mcpaisservice:McpaisService id="mcpaisService"
+												 fault="Alert.show(event.fault.faultString + '\n' + event.fault.faultDetail)"
+												 showBusyCursor="true"/>
+		<s:CallResponder id="getMc_departamentoByPaisResult"/>
+		<mcdepartamentoservice:McdepartamentoService id="mcdepartamentoService"
+															   fault="Alert.show(event.fault.faultString + '\n' + event.fault.faultDetail)"
+															   showBusyCursor="true"/>
+		<s:CallResponder id="getMc_municipioByDptoResult"/>
+		<mcmunicipioservice:McmunicipioService id="mcmunicipioService"
+														 fault="Alert.show(event.fault.faultString + '\n' + event.fault.faultDetail)"
+														 showBusyCursor="true"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:ComboBox id="Cbx_Pais" x="5" y="4" width="100%" change="Cbx_Pais_changeHandler(event)"
+				creationComplete="Cbx_Pais_creationCompleteHandler(event)" labelField="Nombre_Pais"
+				prompt="Pais" contentBackgroundAlpha="0.5" contentBackgroundColor="#000000">
+		<s:AsyncListView list="{getAllMc_paisResult.lastResult}"/>
+	</s:ComboBox>
+	<s:ComboBox id="Cbx_Departamento" width="100%" change="Cbx_Departamento_changeHandler(event)"
+				enabled="false" labelField="Nombre_Departamento" prompt="Departamento" contentBackgroundAlpha="0.5" contentBackgroundColor="#000000">
+		<s:AsyncListView list="{TypeUtility.convertToCollection(getMc_departamentoByPaisResult.lastResult)}"/>
+	</s:ComboBox>
+	<s:ComboBox id="Cbx_Municipio" width="100%" enabled="false" labelField="Nombre_Municipio"
+				prompt="Ciudad" contentBackgroundAlpha="0.5" contentBackgroundColor="#000000">
+		<s:AsyncListView list="{getMc_municipioByDptoResult.lastResult}"/>
+	</s:ComboBox>
+</s:VGroup>

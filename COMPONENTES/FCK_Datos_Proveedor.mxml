@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:ns1="*"
+		 width="744" height="164">
+	<fx:Declarations>
+		
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:Label x="10" y="-26" color="#000000" fontFamily="Georgia" fontSize="28" text="D" styleName="Lbl_panel"/>
+	<s:Label x="28" y="-16.9" color="#000000" fontFamily="Georgia" fontSize="16" text="ATOS" styleName="Lbl_panel"/>
+	<s:Label x="80" y="-26" color="#000000" fontFamily="Georgia" fontSize="28" text="D" styleName="Lbl_panel"/>
+	<s:Label x="100" y="-16.9" color="#000000" fontFamily="Georgia" fontSize="16" text="EL" styleName="Lbl_panel"/>
+	<s:Label x="125" y="-26" color="#000000" fontFamily="Georgia" fontSize="28" text="P" styleName="Lbl_panel"/>
+	<s:Label x="141" y="-16.9" color="#000000" fontFamily="Georgia" fontSize="16" text="ROVEEDOR" styleName="Lbl_panel"/>
+	
+	
+	<s:FormItem x="-8" y="-1" width="208" required="true">
+		<ns1:KCS_Tipo_Documento id="Cbx_Tipo_Documento" width="172"/>
+	</s:FormItem>
+	<s:FormItem x="184" y="0" required="true">
+		<ns1:KCS_Documento id="Txt_Documento" width="110"/>
+	</s:FormItem>
+	<ns1:KCS_Digito_Verificacion id="Lbl_Digito" x="331" y="12" width="30" height="20"/>
+	<s:FormItem x="549" y="0" width="190" required="true">
+		<ns1:KCS_Telefono id="Txt_Telefono" width="150"/>
+	</s:FormItem>
+	<s:FormItem x="369" y="0" width="188" required="true">
+		<ns1:KCS_Celular id="Txt_Celular" width="155"/>
+	</s:FormItem>
+	<s:FormItem x="-8" y="31" required="true">
+		<ns1:KCS_Nom_Razon_Social id="Txt_Nom_Razon_Social" width="350">
+		</ns1:KCS_Nom_Razon_Social>
+	</s:FormItem>
+	<s:FormItem x="-7" y="62" required="true">
+		<ns1:KCS_Direccion id="Txt_Direccion" width="350">
+		</ns1:KCS_Direccion>
+	</s:FormItem>
+	<s:FormItem x="-7" y="93" required="true">
+		<ns1:KCS_Email id="Txt_Email" width="350">
+		</ns1:KCS_Email>
+	</s:FormItem>
+	<s:FormItem x="369" y="31" required="true">
+		<ns1:KCS_Tipo_Contribuyente id="Cbx_Contribuyente" width="155"/>
+	</s:FormItem>
+	<s:FormItem x="549" y="31" required="true">
+		<ns1:KCS_Tipo_Regimen id="Cbx_Regimen" width="151"/>
+	</s:FormItem>
+	<s:FormItem x="369" y="62" required="true">
+		<ns1:KCS_Forma_Pago id="Cbx_Forma_Pago" width="155"/>
+	</s:FormItem>
+	<s:FormItem x="549" y="62" required="true">
+		<ns1:KCS_Estado_Proveedor id="Cbx_Estado" width="151"/>
+	</s:FormItem>
+	
+	
+	
+</s:Panel>

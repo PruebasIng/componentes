@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 >
+	<fx:Script>
+		<![CDATA[
+			import spark.events.TextOperationEvent;
+			
+			protected function convert(event:TextOperationEvent):void
+			{
+				Txt_Apellidos.text = Txt_Apellidos.text.toUpperCase();
+			} 
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:TextInput id="Txt_Apellidos" width="100%" change="convert(event)" 
+				 maxChars="50" prompt="Apellidos" restrict="^0-9"/>
+</s:Group>
